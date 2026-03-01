@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs ls -la)",
+      "Bash(git -C \"C:/Users/javie/OneDrive/Documentos/Proyectos/LinkVault/.claude/worktrees/gracious-kirch\" log --oneline -10)",
+      "Bash(npm create vite@latest frontend -- --template react-ts)",
+      "Bash(npm install react-router-dom tailwindcss @tailwindcss/vite)",
+      "Bash(wmic logicaldisk get size,freespace,caption)",
+      "Bash(powershell -Command \"Get-PSDrive C | Select-Object Used,Free\")",
+      "Bash(npm cache clean --force)",
+      "Bash(npm install)",
+      "Bash(npx vite build)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npx)"
+    ]
+  }
+}
