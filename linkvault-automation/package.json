@@ -1,0 +1,34 @@
+{
+  "name": "linkvault-automation",
+  "version": "1.0.0",
+  "description": "LinkVault distribution automation — SEO, outreach, content, metrics",
+  "type": "module",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "seo:generate": "node modules/01-seo-engine/generator.js",
+    "seo:deploy": "node modules/01-seo-engine/next-page-builder.js",
+    "outreach:scrape": "node modules/02-outreach-engine/scraper.js",
+    "outreach:prepare": "node modules/02-outreach-engine/email-sender.js --prepare",
+    "outreach:send": "node modules/02-outreach-engine/email-sender.js --send",
+    "content:generate": "node modules/03-content-engine/generator.js",
+    "content:publish": "node modules/03-content-engine/publisher.js",
+    "metrics:collect": "node modules/04-metrics-dashboard/collector.js",
+    "run:all": "bash scripts/run-all.sh"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@supabase/supabase-js": "^2.49.4",
+    "axios": "^1.7.9",
+    "bull": "^4.16.5",
+    "googleapis": "^148.0.0",
+    "node-cron": "^3.0.3",
+    "resend": "^4.1.2",
+    "stripe": "^17.7.0",
+    "twitter-api-v2": "^1.19.0",
+    "winston": "^3.17.0",
+    "dotenv": "^16.4.7"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

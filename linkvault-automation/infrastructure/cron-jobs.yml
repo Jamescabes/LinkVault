@@ -1,0 +1,47 @@
+# infrastructure/cron-jobs.yml
+# Usar con node-cron o GitHub Actions scheduled workflows
+
+jobs:
+  # ── OUTREACH (todos los días) ──────────────────────────────
+  scrape-leads:
+    schedule: "0 8 * * 1,3,5"       # Lun, Mié, Vie a las 8 AM
+    command: "npm run outreach:scrape"
+    description: "Scraping de nuevos leads"
+
+  prepare-sequences:
+    schedule: "30 8 * * 1,3,5"      # 30 min después del scraping
+    command: "npm run outreach:prepare"
+    description: "Genera secuencias de email para leads nuevos"
+
+  send-emails:
+    schedule: "0 10 * * 1-5"        # Lun-Vie a las 10 AM
+    command: "npm run outreach:send"
+    description: "Envía emails programados"
+
+  # ── SEO (semanal) ─────────────────────────────────────────
+  seo-generate:
+    schedule: "0 2 * * 0"           # Domingos a las 2 AM
+    command: "npm run seo:generate"
+    description: "Genera nuevas páginas SEO"
+
+  seo-deploy:
+    schedule: "30 2 * * 0"          # 30 min después
+    command: "npm run seo:deploy"
+    description: "Despliega páginas en Vercel"
+
+  # ── CONTENIDO (diario) ────────────────────────────────────
+  content-generate:
+    schedule: "0 20 * * *"          # Cada día a las 8 PM
+    command: "npm run content:generate"
+    description: "Genera contenido para el día siguiente"
+
+  content-publish:
+    schedule: "0 9 * * 1-5"        # Lun-Vie a las 9 AM
+    command: "npm run content:publish"
+    description: "Publica contenido programado"
+
+  # ── MÉTRICAS (diario) ─────────────────────────────────────
+  metrics-collect:
+    schedule: "0 23 * * *"          # Cada noche a las 11 PM
+    command: "npm run metrics:collect"
+    description: "Recoge métricas del día y envía resumen a Telegram"

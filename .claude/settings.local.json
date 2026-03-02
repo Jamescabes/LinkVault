@@ -11,7 +11,9 @@
       "Bash(npm install)",
       "Bash(npx vite build)",
       "mcp__Claude_Preview__preview_start",
-      "Bash(where npx)"
+      "Bash(where npx)",
+      "Bash(chmod +x \"C:\\\\Users\\\\javie\\\\OneDrive\\\\Documentos\\\\Proyectos\\\\LinkVault\\\\.claude\\\\worktrees\\\\gracious-kirch\\\\linkvault-automation\\\\scripts\\\\setup.sh\" \"C:\\\\Users\\\\javie\\\\OneDrive\\\\Documentos\\\\Proyectos\\\\LinkVault\\\\.claude\\\\worktrees\\\\gracious-kirch\\\\linkvault-automation\\\\scripts\\\\run-all.sh\")",
+      "Bash(ls -d */)"
     ]
   }
 }
