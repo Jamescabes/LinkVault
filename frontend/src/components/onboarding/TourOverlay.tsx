@@ -46,19 +46,6 @@ export function TourOverlay() {
   const pad = 8;
   const r = 12;
 
-  // SVG mask: full viewport white (blocked), cutout black (visible)
-  const maskPath = targetRect
-    ? `M0,0 H${window.innerWidth} V${window.innerHeight} H0 Z
-       M${targetRect.left - pad},${targetRect.top - pad + r}
-       a${r},${r} 0 0 1 ${r},-${r}
-       h${targetRect.width + 2 * pad - 2 * r}
-       a${r},${r} 0 0 1 ${r},${r}
-       v${targetRect.height + 2 * pad - 2 * r}
-       a${r},${r} 0 0 1 -${r},${r}
-       h-${targetRect.width + 2 * pad - 2 * r}
-       a${r},${r} 0 0 1 -${r},-${r} Z`
-    : `M0,0 H${window.innerWidth} V${window.innerHeight} H0 Z`;
-
   return (
     <div className="fixed inset-0 z-[9998]" style={{ pointerEvents: 'auto' }}>
       <svg

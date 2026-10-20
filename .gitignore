@@ -1,0 +1,7 @@
+# Local
+.claude/
+.env
+node_modules/
+dist/
+.DS_Store
+Thumbs.db
